@@ -12,34 +12,34 @@ basePath: /api
 
 # Paths supported by the server application
 paths:
-  /people:
+  /menu:
     get:
-      operationId: people.read_all
+      operationId: menu.read_all
       tags:
-        - People
-      summary: Read the entire list of people
-      description: Read the list of people
+        - Menu
+      summary: Read the entire list of menu
+      description: Read the list of menu
       parameters:
         - name: length
           in: query
           type: integer
-          description: Number of people to get from people
+          description: Number of menu to get from menu
           required: false
         - name: offset
           in: query
           type: integer
-          description: Offset from beginning of list where to start gathering people
+          description: Offset from beginning of list where to start gathering menu
           required: false
       responses:
         200:
-          description: Successfully read people list operation
+          description: Successfully read menu list operation
           schema:
             type: array
             items:
               properties:
-                fname:
+                meal:
                   type: string
-                lname:
+                price:
                   type: string
                 ingredients:
                   type: string
@@ -47,93 +47,93 @@ paths:
                   type: string
 
     post:
-      operationId: people.create
+      operationId: menu.create
       tags:
-        - People
-      summary: Create a person and add it to the people list
-      description: Create a new person in the people list
+        - Menu
+      summary: Create food and add it to the menu list
+      description: Create new food in the menu list
       parameters:
-        - name: person
+        - name: food
           in: body
-          description: Person to create
+          description: food to create
           required: True
           schema:
             type: object
             properties:
-              fname:
+              meal:
                 type: string
-                description: First name of person to create
-              lname:
+                description: name of meal to create
+              price:
                 type: string
-                description: Last name of person to create
+                description: price of food to create
               ingredients:
                 type: string
                 description: Ingredients for menu
       responses:
         201:
-          description: Successfully created person in list
+          description: Successfully created food in list
 
-  /people/{lname}:
+  /menu/{price}:
     get:
-      operationId: people.read_one
+      operationId: menu.read_one
       tags:
-        - People
-      summary: Read one person from the people list
-      description: Read one person from the people list
+        - Menu
+      summary: Read food from the menu list
+      description: Read  food from the menu list
       parameters:
-        - name: lname
+        - name: price
           in: path
-          description: Last name of the person to get from the list
+          description: price name of the food to get from the list
           type: string
           required: True
       responses:
         200:
-          description: Successfully read person from people list operation
+          description: Successfully read food from menu list operation
           schema:
             properties:
-              fname:
+              meal:
                 type: string
-              lname:
+              price:
                 type: string
               timestamp:
                 type: string
 
     put:
-      operationId: people.update
+      operationId: menu.update
       tags:
-        - People
-      summary: Update a person in the people list
-      description: Update a person in the people list
+        - Menu
+      summary: Update a food in the menu list
+      description: Update a food in the menu list
       parameters:
-        - name: lname
+        - name: price
           in: path
-          description: Last name of the person to update in the list
+          description: price of the food to update in the list
           type: string
           required: True
-        - name: person
+        - name: food
           in: body
           schema:
             type: object
             properties:
-              fname:
+              meal:
                 type: string
-              lname:
+              price:
                 type: string
       responses:
         200:
-          description: Successfully updated person in people list
+          description: Successfully updated food in menu list
 
     delete:
-      operationId: people.delete
+      operationId: menu.delete
       tags:
-        - People
-      summary: Delete a person from the people list
-      description: Delete a person
+        - Menu
+      summary: Delete  food from the menu list
+      description: Delete  food
       parameters:
-        - name: lname
+        - name: price
           in: path
           type: string
           required: True
       responses:
         200:
-          description: Successfully deleted a person from people list
+          description: Successfully deleted food from menu list

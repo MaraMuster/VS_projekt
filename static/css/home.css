@@ -16,7 +16,9 @@ body {
 }
 
 div.jumbotron {
-    padding-left: 50px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -29,8 +31,8 @@ button {
     background-color: #eee;
 }
 
-.people {
-    width: 50%;
+.menu {
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5px;
