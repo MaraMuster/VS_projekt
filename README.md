@@ -9,6 +9,7 @@ Es können Menüs mit Preisen erstellt werden und diese werden über eine REST-A
 - Python
 - Flask 
 - SQL-Alchemy
+- Swagger
 - jQuery
 - Bootstrap
 - HTML / CSS
