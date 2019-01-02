@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
   description: This is the swagger file that goes with our server code
-  version: "1.0.0"
-  title: Swagger Rest Article
+  version: "1.0.0"  # Version of our API
+  title: Mensa-App
 consumes:
   - application/json
 produces:
@@ -10,7 +10,7 @@ produces:
 
 basePath: /api
 
-# Paths supported by the server application
+# Paths supported by the server application and our endpoints
 paths:
   /menu:
     get:
@@ -23,7 +23,7 @@ paths:
         - name: length
           in: query
           type: integer
-          description: Number of menu to get from menu
+          description: Number of items of menu to get from menu
           required: false
         - name: offset
           in: query
@@ -83,7 +83,7 @@ paths:
       parameters:
         - name: price
           in: path
-          description: price name of the food to get from the list
+          description: price of the food to get from the list
           type: string
           required: True
       responses:
