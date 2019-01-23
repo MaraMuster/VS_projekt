@@ -20,43 +20,40 @@
     </script>
 </head>
 <body>
-<div class="jumbotron">
-  <h1>Jetzt Speiseplan erstellen</h1>
-  <p>Hier kann das Mensapersonal Menüs zusammenstellen</p>
-<div class = "input-group">
-            <label for="meal">Gericht <br>
-                <input id="meal" type="text" />
-            </label>
-            <br />
-            <label for="price">Preis <br>
-                <input id="price" type="text" />
-            </label>
-    </label>
-            <br />
-            <button id="create">Create</button>
-            <button id="update">Update</button>
-            <button id="delete">Delete</button>
-            <button id="reset">Reset</button>
-</div>
-</div>
-
-
-        <div class="menu">
-            <table>
-                <caption>Aktuelle Menüs</caption>
-                <thead>
-                    <tr>
-                        <th>Gericht</th>
-                        <th>Preis</th>
-                        <th>Update Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+    <div class="jumbotron">
+        <h1>Jetzt Speiseplan erstellen</h1>
+        <p>Hier kann das Mensapersonal Menüs zusammenstellen</p>
+        <hr class="my-4">
+    </div>
+    <form>
+        <div class="form-group">
+          <label for="meal">Gericht</label>
+          <input type="text" class="form-control" id="meal">
         </div>
-        <div class="error">
+        <div class="form-group">
+          <label for="price">Preis</label>
+            <input type="text" class="form-control" id="price">
         </div>
+        <button id="create">Create</button>
+        <button id="update">Update</button>
+        <button id="delete">Delete</button>
+        <button id="reset">Reset</button>
+    </form>
+    <div class="menu">
+        <table class="table table-hover">
+            <caption>Aktuelle Menüs</caption>
+            <thead>
+                <tr>
+                    <th>Gericht</th>
+                    <th>Preis</th>
+                    <th>Update Time</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="error">
     </div>
 </body>
 <script src="/static/js/home.js"></script>
