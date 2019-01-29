@@ -113,7 +113,7 @@ ns.view = (function() {
             // did we get a menu array?
             if (menu) {
                 for (let i=0, l=menu.length; i < l; i++) {
-                    rows += `<tr><td class="meal">${menu[i].meal}</td><td class="price">${menu[i].price}</td><td>${menu[i].timestamp}</td></tr>`;
+                    rows += `<tr><td class="meal">${menu[i].meal}</td><td class="price">${menu[i].price}</td><td>${menu[i].timestamp}</td><td>${menu[i].count}</td></tr>`;
                 }
                 $('table > tbody').append(rows);
             }

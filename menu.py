@@ -20,16 +20,19 @@ MENU = {
         "meal": "gemischte Salatschale",
         "price": "1",
         "timestamp": get_timestamp(),
+        "count": "0"
     },
     "1.5": {
         "meal": "Linseneintopf",
         "price": "1.5",
         "timestamp": get_timestamp(),
+        "count": "0"
     },
     "5": {
         "meal": "Schnitzel mit Pommes",
         "price": "5",
         "timestamp": get_timestamp(),
+        "count": "0"
     },
 }
 
@@ -73,6 +76,7 @@ def create(food):
     """
     price = food.get("price", None)
     meal = food.get("meal", None)
+    count = food.get("count", "0")
 
     # Does the food exist already?
     if price not in MENU and price is not None:
@@ -80,6 +84,7 @@ def create(food):
             "price": price,
             "meal": meal,
             "timestamp": get_timestamp(),
+            "count": count,
         }
         return MENU[price], 201
 

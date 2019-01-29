@@ -41,9 +41,9 @@ paths:
                   type: string
                 price:
                   type: string
-                ingredients:
-                  type: string
                 timestamp:
+                  type: string
+                count:
                   type: string
 
     post:
@@ -66,9 +66,9 @@ paths:
               price:
                 type: string
                 description: price of food to create
-              ingredients:
+              count:
                 type: string
-                description: Ingredients for menu
+                description: number of orders
       responses:
         201:
           description: Successfully created food in list
@@ -96,6 +96,8 @@ paths:
               price:
                 type: string
               timestamp:
+                type: string
+              count:
                 type: string
 
     put:
